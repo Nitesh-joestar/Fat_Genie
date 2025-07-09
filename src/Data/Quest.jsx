@@ -5,7 +5,7 @@ export const Questionnaire = [
     questions: [
       {
         id: 1,
-        statype: "calories",
+        statype: "fidgeting",
         question: "How often do you fidget your legs while sitting?",
         options: [
           { label: "Never", value: 0, id: 1 },
@@ -15,7 +15,7 @@ export const Questionnaire = [
       },
       {
         id: 2,
-        statype: "calories",
+        statype: "pacing",
         question: "How frequently do you pace while on phone calls?",
         options: [
           { label: "I sit still", value: 0, id: 1 },

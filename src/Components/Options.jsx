@@ -1,35 +1,42 @@
+import { stringify } from "postcss";
 import "../Css/Question.css";
 import { Questionnaire } from "../Data/Quest";
 
-
-export default function Options({question,title}){
-
-    return(
-        <div>
-          <h3>{title}</h3>
-        {question.map(q=>
-          <div key={q.id}>
+export default function Options({ question, title, Uanswers,UsetAnswers}) {
+  return (
+    <div>
+      <h3>{title}</h3>
+      {question.map((q) => (
+        <div key={q.id}>
           {q.question}
-          <br/>
+          <br />
           <form>
-            {q.options.map(e=>
-          <div key={e.id}>
-	        <input id={e.id} type="radio" name={q.statype} value={e.value} 
-          onChange={() => console.log(e.label)}/>
-	        <label key={e.id}><span></span>{e.label}</label>  
-          <br/>        
-          </div>
-          )}
-              </form>
-          </div>
-        )}
+            {q.options.map((e) => (
+              <div key={e.id}>
+                <input
+                  id={e.id}
+                  type="radio"
+                  name={q.statype}
+                  value={e.value}
+                  onChange={()=>
+                    UsetAnswers(prev=>({
+                      ...prev,
+                      [q.statype]:[e.value]
+                    })
 
-     
-      
-            </div>
-
-    );
-
-
-
+                    )}
+                />
+                <label key={e.id}>
+                  <span></span>
+                  {e.label}
+                </label>
+                <br />
+              </div>
+            ))}
+          </form>
+        </div>
+      ))}
+      {localStorage.setItem("answers",JSON.stringify(Uanswers))}
+    </div>
+  );
 }

@@ -7,18 +7,13 @@ import Cards from './Components/Cards'
 import Options from './Components/Options';
 import { Questionnaire } from './Data/Quest';
 import React from 'react';
+import Page from './Components/Page';
 
 function App() {
 
   return (
     <div>
-    {Questionnaire.map(q=>
-    <React.Fragment key={q.key}>
-
-      <Options question={q.questions} title={q.questionnaire}/>
-      <br/>
-      </React.Fragment>
-    )}
+      <Page/>
 
         </div>
   )
