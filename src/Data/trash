@@ -1,10 +1,8 @@
-import "../Css/Question.css";
+{
 
-
-export default function Question(){
-
-    return(
+            <h3>{question}</h3>
             <div class="radio-input">
+                {options.map(options=>
             <label class="label">
                 <input
                 type="radio"
@@ -12,8 +10,12 @@ export default function Question(){
                 name="value-radio"
                 value="value-1"
                 />
-                <p class="text">Designer</p>
+                <p class="text">{options.label}</p>
             </label>
+
+                )}
+
+            </div>
             <label class="label">
                 <input type="radio" id="value-2" name="value-radio" value="value-2" />
                 <p class="text">Student</p>
@@ -21,13 +23,4 @@ export default function Question(){
             <label class="label">
                 <input type="radio" id="value-3" name="value-radio" value="value-3" />
                 <p class="text">Teacher</p>
-            </label>
-            </div>
-
-        
-
-    );
-
-
-
-}
+            </label>}
