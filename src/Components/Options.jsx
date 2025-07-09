@@ -1,7 +1,6 @@
 import { stringify } from "postcss";
 import "../Css/Question.css";
-import { Questionnaire } from "../Data/Quest";
-
+import SubmitButton from "./SubmitButton";
 export default function Options({ question, title, Uanswers,UsetAnswers}) {
   return (
     <div>
@@ -36,7 +35,8 @@ export default function Options({ question, title, Uanswers,UsetAnswers}) {
           </form>
         </div>
       ))}
-      {localStorage.setItem("answers",JSON.stringify(Uanswers))}
+      <SubmitButton answers={Uanswers}/>
+
     </div>
   );
 }

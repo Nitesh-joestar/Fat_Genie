@@ -1,7 +1,6 @@
 import Options from "./Options"
 import { Questionnaire } from "../Data/Quest"
 import { useState } from "react"
-
 export default function Page(){
     const answersOBJ={
         fidgeting:null,
