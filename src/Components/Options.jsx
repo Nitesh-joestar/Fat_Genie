@@ -8,19 +8,20 @@ export default function Options({question,title}){
         <div>
           <h3>{title}</h3>
         {question.map(q=>
-          <>
+          <div key={q.id}>
           {q.question}
           <br/>
-          <form class="radio-form">
+          <form>
             {q.options.map(e=>
-          <>
-	        <input id={e.id} type="radio" name={q.statype} value={e.value}/>
-	        <label><span></span>{e.label}</label>  
+          <div key={e.id}>
+	        <input id={e.id} type="radio" name={q.statype} value={e.value} 
+          onChange={() => console.log(e.label)}/>
+	        <label key={e.id}><span></span>{e.label}</label>  
           <br/>        
-          </>
+          </div>
           )}
               </form>
-          </>
+          </div>
         )}
 
      

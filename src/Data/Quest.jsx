@@ -1,6 +1,7 @@
 export const Questionnaire = [
   {
     questionnaire: "How healthy you are",
+    key:"Az",
     questions: [
       {
         id: 1,
@@ -66,6 +67,8 @@ export const Questionnaire = [
   },
   {
     questionnaire: "How focused you are",
+      key:"Ax",
+
     questions: [
       {
         id: 1,
