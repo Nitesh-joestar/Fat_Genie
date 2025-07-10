@@ -1,21 +1,18 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { BrowserRouter,Routes, Route } from "react-router-dom";
 import "./Css/App.css";
-import Buttons from './Components/Button'
-import Cards from './Components/Cards'
-import Options from './Components/Options';
-import { Questionnaire } from './Data/Quest';
-import React from 'react';
-import Page from './Components/Page';
+import Page from "./Components/Page";
+import Home from './Components/Home';
 
 function App() {
 
   return (
-    <div>
-      <Page/>
-
-        </div>
+    <BrowserRouter>
+    <Routes>
+    <Route path="/" element={<Home/>}/>
+    <Route path="/quiz" element={<Page/>}/>
+    </Routes>
+    
+    </BrowserRouter>
   )
 }
 
